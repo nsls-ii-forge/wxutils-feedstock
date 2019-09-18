@@ -1,0 +1,34 @@
+{% set name = "wxutils" %}
+{% set version = "0.2.3" %}
+{% set file_ext = "tar.gz" %}
+{% set sha256 = "0d0b2f2cf81d894778d65eb35a986621a73acaf5afdd4296f10f797918d46a72" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ file_ext }}
+  sha256: {{ sha256 }}
+
+build:
+  noarch: python
+  number: 0
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+
+requirements:
+  host:
+    - python
+    - pip
+  run:
+    - python
+
+test:
+  imports:
+    - wxutils
+
+about:
+  home: https://github.com/newville/wxutils
+  license: BSD
+  license_file: LICENSE
+  summary: Utilities and convenience classes and functions for wxPython
