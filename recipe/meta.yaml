@@ -1,20 +1,19 @@
 {% set name = "wxutils" %}
-{% set version = "0.2.3" %}
-{% set file_ext = "tar.gz" %}
-{% set sha256 = "0d0b2f2cf81d894778d65eb35a986621a73acaf5afdd4296f10f797918d46a72" %}
+{% set version = "0.2.4" %}
+{% set sha256 = "6b4ae621b6a0ad0d0e4b8b822bd982413ba053d6e11cd97f021632716e175eac" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ file_ext }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
