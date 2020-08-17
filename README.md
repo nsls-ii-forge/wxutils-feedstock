@@ -5,7 +5,7 @@ Home: https://github.com/newville/wxutils
 
 Package license: BSD
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Utilities and convenience classes and functions for wxPython
 
